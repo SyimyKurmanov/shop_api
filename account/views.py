@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from rest_framework.response import Response
 from rest_framework import permissions
 from rest_framework.views import APIView
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .send_mail import send_confirmation_email
 from . import serializers
@@ -42,3 +43,5 @@ class ActivationView(APIView):
         except User.DoesNotExist:
             return Response({'msg': 'Link expired!'}, status=400)
 
+class LoginView(TokenObtainPairView):
+    permission_classes = [permissions.AllowAny]
