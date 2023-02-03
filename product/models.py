@@ -4,6 +4,8 @@ from django.contrib.auth import get_user_model
 from category.models import Category
 
 User = get_user_model()
+
+
 class Product(models.Model):
     STATUS_CHOICES = (
         ('in_stock', 'в наличии'),

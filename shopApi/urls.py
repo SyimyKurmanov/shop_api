@@ -25,10 +25,10 @@ from product.views import ProductViewSet
 from django.conf.urls.static import static
 from django.conf import settings
 
-
+from category.views import CategoryViewSet
 
 router = SimpleRouter()
-# router.register('categories', CategoryViewSet)
+router.register('categories', CategoryViewSet)
 router.register('products', ProductViewSet)
 
 schema_view = get_schema_view(
@@ -51,6 +51,8 @@ urlpatterns = [
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('admin/', admin.site.urls),
     path('api/v1/accounts/', include('account.urls')),
+    path('api/v1/reviews/', include('rating.urls')),
+    path('api/v1/orders/', include('order.urls')),
     path('api/v1/', include(router.urls)),
 ]
 
