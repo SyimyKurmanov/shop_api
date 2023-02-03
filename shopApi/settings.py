@@ -203,3 +203,9 @@ CKEDITOR_CONFIGS = {
 }
 
 SWAGGER_SETTINGS = { "DEFAULT_GENERATOR_CLASS": "rest_framework.schemas.generators.BaseSchemaGenerator", }
+
+# John Snow
+# The king of North
+# PyHub
+
+
